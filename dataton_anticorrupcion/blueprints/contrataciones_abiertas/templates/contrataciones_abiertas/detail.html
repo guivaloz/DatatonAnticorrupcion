@@ -6,8 +6,10 @@
 
 {% block content %}
                 <h1 class="page-header">Contratación abierta</h1>
-                <div class="panel {% if contratacion_abierta.estatus == 'A' %}panel-default{% else %}panel-danger{% endif %}">
-                    {{ detail.panel_heading(blueprint='contrataciones_abiertas', title=contratacion_abierta.ocid, id=contratacion_abierta.id, actions=actions) }}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Contratación abierta
+                    </div>
                     <div class="panel-body">
                         <dl class="dl-horizontal">
                             <dt>OCID</dt>

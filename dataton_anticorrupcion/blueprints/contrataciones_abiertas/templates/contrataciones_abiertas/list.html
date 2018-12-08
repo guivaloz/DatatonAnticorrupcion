@@ -5,4 +5,34 @@
 {% block description %}Listado de contrataciones abiertas.{% endblock %}
 
 {% block content %}
+                <h1 class="page-header">Personas</h1>
+                <div class="panel panel-default">
+                    {{ list.panel_heading(blueprint='contrataciones_abiertas', title='Contrataciones abiertas', actions=actions) }}
+                    {% if contrataciones_abiertas|length == 0 %}
+                        {{ list.panel_body_message('No se encontraron contrataciones abiertas.') }}
+                    {% else %}
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>OCID</th>
+                                <th>Date</th>
+                                <th>Contracts title</th>
+                                <th>Contracts supplier</th>
+                                <th>Contracts amount</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for contratacion_abierta in contrataciones_abiertas %}
+                            <tr>
+                                <td><a href="{{ url_for('contrataciones_abiertas.detail', id=contratacion_abierta.id) }}">{{ contratacion_abierta.ocid }}</a></td>
+                                <td>{{ contratacion_abierta.date }}</td>
+                                <td>{{ contratacion_abierta.contracts_title }}</td>
+                                <td>{{ contratacion_abierta.contracts_supplier }}</td>
+                                <td>{{ contratacion_abierta.contracts_amount }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+                </div>
 {% endblock %}

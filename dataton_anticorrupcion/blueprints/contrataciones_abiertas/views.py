@@ -21,3 +21,13 @@ def list_active():
     return render_template('contrataciones_abiertas/list.html',
                            contrataciones_abiertas=contrataciones_abiertas,
                            actions=None)
+
+
+@contrataciones_abiertas.route('/contrataciones_abiertas/detail/<int:id>')
+def detail(id):
+    contratacion_abierta = ContratacionesAbiertas.query.get(id)
+    actions = { 'edit': False, 'status': contratacion_abierta.estatus }
+    return render_template('contrataciones_abiertas/detail.html',
+                           contratacion_abierta=contratacion_abierta,
+                           actions=actions)
+
