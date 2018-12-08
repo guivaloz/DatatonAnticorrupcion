@@ -1,0 +1,65 @@
+{# field_label renderizar etiqueta con texto de ayuda #}
+{%- macro field_label(f) -%}
+  <label for="{{ f.id }}">
+    {%- if f.flags.required -%}
+      <strong>{{ f.label.text }}</strong>
+    {%- else %}
+      {{ f.label.text }}
+    {%- endif %}
+  </label>
+{%- endmacro -%}
+
+
+{# field_errors renderizar errores de validacion si los hay #}
+{%- macro field_errors(f) -%}
+  {% if f.errors %}
+    <ul class="list-unstyled text-danger field-error">
+      {% for error in f.errors %}
+          <li>{{ error | e }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{%- endmacro -%}
+
+
+{# field renderizar un campo del formulario #}
+{%- macro field(f, css_class='form-control') -%}
+  {{ f(class=css_class, **kwargs) }}
+{%- endmacro -%}
+
+
+{# checkbox_field renderizar un campo de opcion multiple #}
+{%- macro checkbox_field(f) -%}
+  {{ f(type='checkbox', **kwargs) }} {{ f.label }}
+{%- endmacro -%}
+
+
+{# form_group renderizar un grupo de un formulario, con errores si los hay #}
+{%- macro form_group(f, css_class='') -%}
+  {% if f.errors %}
+    {% set css_class = css_class + ' has-error ' + kwargs.pop('class', '') %}
+  {% endif %}
+
+  {% if f.type == 'BooleanField' %}
+      <div class="checkbox {{ css_class }}">
+    {{ checkbox_field(f, **kwargs) }}
+  {% else %}
+      <div class="form-group {{ css_class }}">
+    {{ field_label(f) }}
+    {{ field(f, **kwargs) }}
+  {% endif %}
+
+    {{ field_errors(f) }}
+    {{ caller () }}
+  </div>
+{%- endmacro %}
+
+
+{# form_tag renderizar un formulario, que contiene un token CSRF y campos ocultos #}
+{%- macro form_tag(endpoint, fid='', css_class='', method='post') -%}
+  <form action="{{ url_for(endpoint, **kwargs) }}" method="{{ method }}"
+        id="{{ fid }}" class="{{ css_class }}" role="form">
+    {{ form.hidden_tag() }}
+    {{ caller () }}
+  </form>
+{%- endmacro -%}

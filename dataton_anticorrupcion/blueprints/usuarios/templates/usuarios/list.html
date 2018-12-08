@@ -1,0 +1,32 @@
+{% extends 'layouts/app.html' %}
+{% import 'macros/list.html' as list with context %}
+
+{% block title %}Usuarios{% endblock %}
+{% block description %}Listado de usuarios.{% endblock %}
+
+{% block content %}
+                <h1 class="page-header">Usuarios</h1>
+                <div class="panel panel-default">
+                    {{ list.panel_heading(blueprint='usuarios', title='Usuarios', actions=actions) }}
+                    {% if usuarios|length == 0 %}
+                        {{ list.panel_body_message('No se encontraron usuarios.') }}
+                    {% else %}
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th class="col-header">Nombres</th>
+                                <th class="col-header">e-mail</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for usuario in usuarios %}
+                            <tr>
+                                <td><a href="{{ url_for('usuarios.detail', id=usuario.id) }}">{{ usuario.nombre }}</a></td>
+                                <td>{{ usuario.email }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                    {% endif %}
+                </div>
+{% endblock %}

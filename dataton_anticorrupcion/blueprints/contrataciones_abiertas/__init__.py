@@ -1,0 +1,1 @@
+from dataton_anticorrupcion.blueprints.contrataciones_abiertas.views import contrataciones_abiertas

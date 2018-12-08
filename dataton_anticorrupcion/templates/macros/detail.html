@@ -1,0 +1,21 @@
+{# encabezado para panel de detalle #}
+{%- macro panel_heading(blueprint, title, id, actions) -%}
+        <div class="panel-heading">
+            {{ title }}
+            <span class="pull-right">
+            {% if 'status' in actions %}
+                {% if actions['status'] == 'A' %}
+                    {% if 'edit' in actions %}
+                        {% if actions['edit'] == True %}
+                        <a class="btn btn-warning btn-xs" href="{{ url_for(blueprint + '.edit', id=id) }}" role="button">Modificar</a>
+                        {% endif %}
+                    {% endif %}
+                    <a class="btn btn-danger btn-xs" href="{{ url_for(blueprint + '.delete', id=id) }}" role="button">Eliminar</a>
+                {% endif %}
+                {% if actions['status'] == 'B' %}
+                    <a class="btn btn-info btn-xs" href="{{ url_for(blueprint + '.recover', id=id) }}" role="button">Recuperar</a>
+                {% endif %}
+            {% endif %}
+            </span>
+        </div>
+{%- endmacro -%}

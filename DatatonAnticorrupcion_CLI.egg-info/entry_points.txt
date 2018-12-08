@@ -1,0 +1,4 @@
+
+        [console_scripts]
+        dataton_anticorrupcion=cli.cli:cli
+    

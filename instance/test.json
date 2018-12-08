@@ -1,0 +1,37 @@
+[
+    {
+        "id":"20147",
+        "additionalIdentifiers":[
+            {
+                "scheme":"MX-CPA",
+                "id":"20",
+                "legalName":"Desarrollo Social",
+                "schemeUrl":"http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Metadatos/catalogos_presupuestarios.xlsx"
+            }
+        ],
+        "name":"delegaci\u00f3n SEDESOL en Tabasco",
+        "contactPoint":{"name":"Gustavo Antonio Glori Tellechea"},
+        "identifier":
+            {
+                "id":"20147",
+                "legalName":"delegaci\u00f3n SEDESOL en Tabasco",
+                "scheme":"MX-CPA",
+                "schemeUrl":"http://www.transparenciapresupuestaria.gob.mx/work/models/PTP/DatosAbiertos/Metadatos/catalogos_presupuestarios.xlsx"
+            },
+        "roles":["buyer"]
+        },
+        {
+            "id":"95F5D7F5DD77D73E3232026B4732232A",
+            "name":"JESUS ALBERTO ROSAS GARDUZA",
+            "contactPoint":{"name":"JESUS A ROSAS GARDUZA"},
+            "identifier":
+                {
+                    "id":"95F5D7F5DD77D73E3232026B4732232A",
+                    "legalName":"JESUS ALBERTO ROSAS GARDUZA",
+                    "scheme":"MX-RFC",
+                    "schemeUrl":"https://portalsat.plataforma.sat.gob.mx/ConsultaRFC/"
+                },
+            "roles":["supplier"]
+        }
+    }
+]

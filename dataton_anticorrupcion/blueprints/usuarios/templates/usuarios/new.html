@@ -1,0 +1,16 @@
+{% extends 'layouts/app.html' %}
+{% import 'macros/form.html' as f with context %}
+
+{% block title %}Nuevo usuario{% endblock %}
+{% block description %}Nuevo usuario.{% endblock %}
+
+{% block content %}
+                <h1 class="page-header">Nuevo usuario</h1>
+                {% call f.form_tag('usuarios.new') %}
+                    {% call f.form_group(form.nombre) %}{% endcall %}
+                    {% call f.form_group(form.email) %}{% endcall %}
+                    {% call f.form_group(form.contrasena) %}{% endcall %}
+                    {% call f.form_group(form.notas, rows='4') %}{% endcall %}
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                {% endcall %}
+{% endblock %}

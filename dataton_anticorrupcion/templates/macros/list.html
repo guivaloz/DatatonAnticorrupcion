@@ -1,0 +1,25 @@
+{# encabezado para panel de listado #}
+{%- macro panel_heading(blueprint, title, actions) -%}
+        <div class="panel-heading">
+            {{ title }}
+            {% if actions['status'] == 'A' %}en uso{% endif %}
+            {% if actions['status'] == 'B' %}eliminados{% endif %}
+            <span class="pull-right">
+                {% if actions['status'] == 'A' %}
+                <a class="btn btn-primary btn-xs" href="{{ url_for(blueprint + '.new') }}" role="button">Agregar</a>
+                <a class="btn btn-danger btn-xs" href="{{ url_for(blueprint + '.list_deleted') }}" role="button">Eliminados</a>
+                {% endif %}
+                {% if actions['status'] == 'B' %}
+                <a class="btn btn-info btn-xs" href="{{ url_for(blueprint + '.list_active') }}" role="button">En Uso</a>
+                {% endif %}
+            </span>
+        </div>
+{%- endmacro -%}
+
+{%- macro panel_body_message(message) -%}
+        <div class="panel-body">
+            <div class="alert alert-info">
+                {{ message }}
+            </div>
+        </div>
+{%- endmacro -%}

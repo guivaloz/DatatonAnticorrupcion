@@ -1,0 +1,25 @@
+
+# Flask
+Flask==1.0.2
+Flask-Login==0.4.1
+Flask-SQLAlchemy==2.3.2
+Flask-WTF==0.14.2
+
+# CLI
+click==6.7
+
+# Gunicorn web server
+gunicorn==19.9.0
+
+# PostgreSQL
+psycopg2-binary==2.7.5
+
+# SQLAlchemy
+SQLAlchemy==1.2.12
+SQLAlchemy-Utils==0.33.5
+
+# WTForms
+WTForms-Alchemy==0.16.7
+
+# Encrypt passwords
+passlib==1.7.1

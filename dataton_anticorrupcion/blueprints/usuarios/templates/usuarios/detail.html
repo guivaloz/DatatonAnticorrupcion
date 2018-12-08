@@ -1,0 +1,22 @@
+{% extends 'layouts/app.html' %}
+{% import 'macros/detail.html' as detail with context %}
+
+{% block title %}Usuario{% endblock %}
+{% block description %}Detalle de un usuario.{% endblock %}
+
+{% block content %}
+                <h1 class="page-header">Usuario</h1>
+                <div class="panel {% if usuario.estatus == 'A' %}panel-default{% else %}panel-danger{% endif %}">
+                    {{ detail.panel_heading(blueprint='usuarios', title=usuario.nombre, id=usuario.id, actions=actions) }}
+                    <div class="panel-body">
+                        <dl class="dl-horizontal">
+                            <dt>Nombre</dt>
+                            <dd>{{ usuario.nombre }}</dd>
+                            <dt>e-mail</dt>
+                            <dd>{{ usuario.email }}</dd>
+                            <dt>Notas</dt>
+                            <dd>{{ usuario.notas }}</dd>
+                        </dl>
+                    </div>
+                </div>
+{% endblock %}

@@ -1,0 +1,87 @@
+/*
+ * app.css
+ */
+
+/* Global */
+body            { font-family: 'Roboto','Arial',Arial,sans-serif; font-weight: 400; font-size: 16px; }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6              { font-weight: 500; }
+a               { font-weight: 500; }
+a:hover,
+a:focus         { text-decoration: underline; }
+strong          { font-weight: 500; }
+code,
+pre             { font-family: 'Roboto Mono',monospaced; font-weight: 400; font-size: 14px; }
+
+/* Navigation */
+.navbar-header  { font-weight: 700; }
+
+/* All page */
+#page-wrapper   { min-height: 1200px; }
+@media (min-width: 768px) {
+    .sidebar    { margin-top: 53px; }
+}
+
+/* Messages */
+.flash-messages { margin-top: 8px; margin-top: 8px; }
+
+/* Colors
+ * https://www.canva.com/learn/website-color-schemes/
+ * 09. Warm Tones
+ *   #D7CEC7 Grain
+ *   #565656 Blackboard
+ *   #76323F Oxblood
+ *   #C09F80 Tan
+ */
+
+/* Global */
+body       { background-color: #565656; } /* Blackboard */
+a          { color: #76323F; }            /* Oxblood */
+a:hover,
+a:focus    { color: #76323F; }            /* Oxblood */
+a:active,
+a:visited  { color: #76323F; }            /* Oxblood */
+pre        { color: #000; }
+
+/* Brand */
+.navbar-static-top .navbar-header .navbar-brand,
+.navbar-static-top .navbar-header .navbar-brand:link,
+.navbar-static-top .navbar-header .navbar-brand:visited { color: #EEE; }
+.navbar-static-top .navbar-header .navbar-brand:hover,
+.navbar-static-top .navbar-header .navbar-brand:focus   { color: #FFF; }
+
+/* User sesion */
+.navbar-top-links li a        { color: #C09F80; }                /* Tan */
+.navbar-top-links li a:hover,
+.navbar-top-links li a:focus  { background-color: #565656; }     /* Blackboard */
+
+/* Navigation */
+.navbar-central               { background-color: #76323F; }     /* Oxblood */
+
+/* Main menu */
+.sidebar-central              { background-color: #C09F80; }     /* Tan */
+.sidebar ul li                { border-bottom: 1px solid #888; }
+.sidebar ul li a,
+.sidebar ul li a:link,
+.sidebar ul li a:visited      { background-color: #C09F80; }     /* Tan */
+.sidebar ul li a:hover,
+.sidebar ul li a:focus        { background-color: #DEC8BD; }     /* Tan */
+.sidebar ul li a.active       { background-color: #D2B4A5; }     /* Tan */
+
+/* Buttons */
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:visited { color: white; }
+.btn-danger,
+.btn-danger:hover,
+.btn-danger:visited  { color: white; }
+.btn-info,
+.btn-info:hover,
+.btn-info:visited    { color: white; }
+.btn-warning,
+.btn-warning:hover,
+.btn-warning:visited { color: white; }

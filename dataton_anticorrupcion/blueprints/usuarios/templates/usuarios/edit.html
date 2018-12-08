@@ -1,0 +1,17 @@
+{% extends 'layouts/app.html' %}
+{% import 'macros/form.html' as f with context %}
+
+{% block title %}Modificar usuario{% endblock %}
+{% block description %}Modificar usuario.{% endblock %}
+
+{% block content %}
+                <h1 class="page-header">Modificar usuario</h1>
+                {% set form_kwargs = {'id': usuario.id} %}
+                {% call f.form_tag('usuarios.edit', **form_kwargs) %}
+                    {% call f.form_group(form.nombre) %}{% endcall %}
+                    {% call f.form_group(form.email) %}{% endcall %}
+                    {% call f.form_group(form.contrasena) %}{% endcall %}
+                    {% call f.form_group(form.notas, rows='4') %}{% endcall %}
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                {% endcall %}
+{% endblock %}

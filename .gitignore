@@ -1,0 +1,5 @@
+.directory
+__pycache__
+*.pyc
+instance/settings.py
+instance/*.csv
