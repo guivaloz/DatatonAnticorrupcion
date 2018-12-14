@@ -16,10 +16,10 @@ contrataciones_abiertas_cvs_file = 'instance/contratacionesabiertas_bulk_paquete
 app = create_app()
 db.app = app
 
-# Para evitar el error
-# _csv.Error: field larger than field limit
-# https://stackoverflow.com/questions/15063936/csv-error-field-larger-than-field-limit-131072
-# Inicia
+# Para evitar el error '_csv.Error: field larger than field limit'
+# Gracias a
+#   https://stackoverflow.com/questions/15063936/csv-error-field-larger-than-field-limit-131072
+### Inicia
 maxInt = sys.maxsize
 decrement = True
 
@@ -32,7 +32,7 @@ while decrement:
     except OverflowError:
         maxInt = int(maxInt/10)
         decrement = True
-# Termina
+### Termina
 
 def seed_contrataciones_abiertas():
     if os.path.isfile(contrataciones_abiertas_cvs_file):

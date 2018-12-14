@@ -36,9 +36,9 @@ def seed():
     usuarios = [
         {
             'rol': 'admin',
-            'nombre': u'Guillermo Valdés Lozano',
-            'email': 'guillermo.valdes@seacoahuila.org.mx',
-            'contrasena': pwd_context.hash("cetujavu"),
+            'nombre': u'Fulano de Tal',
+            'email': 'fulano@gmail.com',
+            'contrasena': pwd_context.hash("cambielacontrasena"),
         },
     ]
     for us in usuarios:
